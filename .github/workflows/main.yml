@@ -55,11 +55,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Docker]
     steps:
+      - name: Clone down repository
+        uses: actions/checkout@v4
       - name: Execute component test
         run: bash ci/component-test.sh
   PerformanceTest:
     runs-on: ubuntu-latest
     needs: [Docker]
     steps:
+      - name: Clone down repository
+        uses: actions/checkout@v4
       - name: Execute perfromance test
         run: bash ci/performance-test.sh
