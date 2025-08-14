@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Clone down repository
         uses: actions/checkout@v4
+      - name: Write environment
+        run: echo "${{ toJSON(github) }}"
       - name: Build the application
         run: ci/build-app.sh
       - name: Test the application
